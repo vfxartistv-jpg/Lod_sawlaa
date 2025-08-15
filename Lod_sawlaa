@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="UTF-8">
+  <title>Lod_sawlaa Video Call</title>
+</head>
+<body>
+  <h1>10 хүний видео чат (туршилт)</h1>
+  <video id="localVideo" autoplay playsinline muted></video>
+  <div id="remoteVideos"></div>
+  <script>
+    navigator.mediaDevices.getUserMedia({ video: true, audio: true })
+      .then(stream => {
+        document.getElementById('localVideo').srcObject = stream;
+      })
+      .catch(err => {
+        alert("Камер/Микрофон нээж чадсангүй: " + err);
+      });
+  </script>
+</body>
+</html>
