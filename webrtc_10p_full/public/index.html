@@ -1,0 +1,35 @@
+<!doctype html>
+<html lang="mn">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Live Call (10 хүн)</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+<header>Live Call — 10 хүний видео/аудио (WebRTC)</header>
+<main>
+  <div class="controls">
+    <input id="name" placeholder="Нэр" />
+    <input id="room" placeholder="Room ID (ж: team123)" />
+    <button id="join">Join</button>
+    <button id="leave" disabled>Leave</button>
+    <button id="mic" disabled>Mic</button>
+    <button id="cam" disabled>Cam</button>
+    <span class="pill"><span id="count">0</span> хүн</span>
+  </div>
+
+  <section id="videos" class="grid">
+    <div class="card">
+      <div class="pill">Та</div>
+      <video id="local" class="me" autoplay playsinline muted></video>
+    </div>
+  </section>
+
+  <div class="log" id="log">Бэлэн.</div>
+</main>
+
+<script src="/socket.io/socket.io.js"></script>
+<script src="script.js"></script>
+</body>
+</html>
